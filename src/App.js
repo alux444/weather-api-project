@@ -5,16 +5,15 @@ import ERROR from './img/error.png'
 import Clouds from './img/clouds.png'
 import Cloudy from './img/cloudy.png'
 import Rain from './img/rain.png'
-import Shower from './img/shower.png'
 import Snow from './img/snow.png'
 import Sunny from './img/sunny.png'
 import Thunder from './img/thunderstorm.png'
+import Mist from './img/mist.png'
 
 const App = () => {
 
   const [data, setData] = useState({})
   const [city, setCity] = useState('')
-  const [error, setError] = useState(false)
   
   const options = {
     method: 'GET',
@@ -28,16 +27,13 @@ const App = () => {
   
   fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`, options)
     .then(response => response.json())
-    .then(response => 
-      setData(response))
-    .then(setError(false))
-    .catch(err => setError(true))
+    .then(response => setData(response))
+    .catch(err => console.log(err))
   }
 
   const submitHandler = e => {
     e.preventDefault()
     fetchData()
-    console.log(error)
   }
 
   const handleChange = (event) => {
@@ -55,10 +51,17 @@ const App = () => {
           placeholder='Enter your city'/>
           <button className='btn submit-btn'> Submit </button>
       </form>
-
+      <div className="images">
       {data.current ? data.current.condition.code === 1000 ? <img src={Sunny} alt="sunny"/> : null : null}
+      {data.current ? data.current.condition.code === 1003 ? <img src={Clouds} alt="clouds"/> : null : null}
+      {data.current ? data.current.condition.code === (1006 || 1009) ? <img src={Cloudy} alt="cloudy"/> : null : null}
+      {data.current ? data.current.condition.text.includes("mist" || "fog") ? <img src={Mist} alt="mist"/> : null : null}
+      {data.current ? data.current.condition.text.includes("rain" || "drizzle") ? <img src={Rain} alt="rain"/> : null : null}
+      {data.current ? data.current.condition.text.includes("thunder") ? <img src={Thunder} alt="thunder"/> : null : null}
+      {data.current ? data.current.condition.text.includes("snow" || "sleet") ? <img src={Snow} alt="snow"/> : null : null}
 
       {data.error ? <img src={ERROR} alt='error'/> : null}
+      </div>
 
         <div className='weather-container'>
           <div className='weather-box'>
@@ -66,9 +69,9 @@ const App = () => {
                : null}
             {data.current ? (<p display='inline'>{data.location.name},{data.location.country}</p>)
                : null} 
-            {data.current ? (<p display='inline'>Temperature: {data.current.temp_c}</p>)
+            {data.current ? (<p display='inline'>Temperature: {data.current.temp_c}°C</p>)
                : null}
-            {data.current ? (<p display='inline'>Feels like: {data.current.feelslike_c}</p>)
+            {data.current ? (<p display='inline'>Feels like: {data.current.feelslike_c}°C</p>)
                : null}
             {data.current ? (<p display='inline'>Wind Speed: {data.current.gust_kph} kmph</p>)
                : null} 
