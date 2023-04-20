@@ -20,13 +20,11 @@ body{
   width: min-content;
   height: min-content;
   background: white;
+  overflow:hidden;
   padding: 10px 10px;
   border-radius: 20px;
-  transition: 1s ease;
-}
-
-.images{
-
+  transition: height 2s ease;
+  transition-delay: 1s;
 }
 
 .searchbox{
@@ -52,6 +50,12 @@ body{
   font-size:20px;
   font-weight: 600;
   border-radius: 10px;
+  transition: 1s ease;
+}
+
+.submit-btn:hover{
+  background-color:rgba(210, 71, 25, 0.781);
+  cursor:pointer;
 }
 
 .error-img{
@@ -60,9 +64,4 @@ body{
 
 .weather-container{
   display:flex;
-}
-
-.fade-animation{
-  animation: 3s linear 1s slidein;
-  animation-delay: 0.5s;
 }

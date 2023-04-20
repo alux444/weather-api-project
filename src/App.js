@@ -51,13 +51,12 @@ const App = () => {
           placeholder='Enter your city'/>
           <button className='btn submit-btn'> Submit </button>
       </form>
-      <div className="images">
+      <div className="images fadeIn">
       {data.current ? data.current.condition.code === 1000 ? <img src={Sunny} alt="sunny"/> : null : null}
-      {data.current ? data.current.condition.code === 1003 ? <img src={Clouds} alt="clouds"/> : null : null}
-      {data.current ? data.current.condition.code === (1006 || 1009) ? <img src={Cloudy} alt="cloudy"/> : null : null}
-      {data.current ? data.current.condition.text.includes("mist" || "fog") ? <img src={Mist} alt="mist"/> : null : null}
-      {data.current ? data.current.condition.text.includes("rain" || "drizzle") ? <img src={Rain} alt="rain"/> : null : null}
-      {data.current ? data.current.condition.text.includes("thunder") ? <img src={Thunder} alt="thunder"/> : null : null}
+      {data.current ? data.current.condition.text.includes("Partly cloudy") ? <img src={Clouds} alt="clouds"/> : data.current.condition.text.includes("Overcast" || "Cloudy") ? <img src={Cloudy} alt="cloudy"/> : null : null}
+      {data.current ? data.current.condition.text.includes("Mist" || "Fog") ? <img src={Mist} alt="mist"/> : null : null}
+      {data.current ? data.current.condition.text.includes("thunder") ? <img src={Thunder} alt="thunder"/> :
+      data.current.condition.text.includes("rain" || "drizzle") ? <img src={Rain} alt="rain"/> : null : null}
       {data.current ? data.current.condition.text.includes("snow" || "sleet") ? <img src={Snow} alt="snow"/> : null : null}
 
       {data.error ? <img src={ERROR} alt='error'/> : null}
