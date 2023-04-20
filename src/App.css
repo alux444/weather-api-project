@@ -10,6 +10,7 @@
 body{
   background:rgb(16, 23, 41);
   height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,4 +65,24 @@ body{
 
 .weather-container{
   display:flex;
+}
+
+@media screen and (max-width: 600px) {
+  .searchbox{
+    width:300px; 
+  }
+
+  .searchbar{
+    font-size:20px;
+  }
+
+  .submit-btn{
+    height:40px;
+    width:90px;
+    font-size:16px
+  }
+
+  img{
+    width:80%;
+  }
 }
