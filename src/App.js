@@ -41,7 +41,7 @@ const App = () => {
   }
 
   return (
-      <div className='container fade-animation'>
+      <div className='container'>
         <form className='searchbox'
         onSubmit={submitHandler}>
           <input className='searchbar' 
@@ -51,15 +51,34 @@ const App = () => {
           placeholder='Enter your city'/>
           <button className='btn submit-btn'> Submit </button>
       </form>
-      <div className="images animation">
-      {data.current ? data.current.condition.code === 1000 ? <img src={Sunny} alt="sunny"/> : null : null}
-      {data.current ? data.current.condition.text.includes("Partly cloudy") ? <img src={Clouds} alt="clouds"/> : data.current.condition.text.includes("Overcast" || "Cloudy") ? <img src={Cloudy} alt="cloudy"/> : null : null}
-      {data.current ? data.current.condition.text.includes("Mist" || "Fog") ? <img src={Mist} alt="mist"/> : null : null}
-      {data.current ? data.current.condition.text.includes("thunder") ? <img src={Thunder} alt="thunder"/> :
-      data.current.condition.text.includes("rain" || "drizzle") ? <img src={Rain} alt="rain"/> : null : null}
-      {data.current ? data.current.condition.text.includes("snow" || "sleet") ? <img src={Snow} alt="snow"/> : null : null}
+      <div className="images">
 
-      {data.error ? <img className="animation" src={ERROR} alt='error'/> : null}
+      {data.current ? 
+      data.current.condition.code === 1000 ? <img src={Sunny} alt="sunny"/> : null : null}
+
+      {data.current ? 
+      data.current.condition.text.toLowerCase().includes("Partly cloudy") ? 
+      <img src={Clouds} alt="clouds"/> : 
+      data.current.condition.text.toLowerCase().includes("overcast") || 
+      data.current.condition.text.toLowerCase().includes("cloudy") ? <img src={Cloudy} alt="cloudy"/> : null : null}
+
+
+      {data.current ? 
+      data.current.condition.text.toLowerCase().includes("mist") || 
+      data.current.condition.text.toLowerCase().includes("fog") ? <img src={Mist} alt="mist"/> : null : null}
+
+      {data.current ? 
+      data.current.condition.text.toLowerCase().includes("thunder") ? <img src={Thunder} alt="thunder"/> :
+      data.current.condition.text.toLowerCase().includes("rain") || 
+      data.current.condition.text.toLowerCase().includes("drizzle") ? <img src={Rain} alt="rain"/> : null : null}
+
+      {data.current ? 
+      data.current.condition.text.toLowerCase().includes("snow") || 
+      data.current.condition.text.toLowerCase().includes("sleet") ||
+      data.current.condition.text.toLowerCase().includes("blizzard") ||
+      data.current.condition.text.toLowerCase().includes("pellets") ? <img src={Snow} alt="snow"/> : null : null}
+
+      {data.error ? <img src={ERROR} alt='error'/> : null}
       </div>
 
         <div className='weather-container'>
