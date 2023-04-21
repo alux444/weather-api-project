@@ -57,7 +57,7 @@ const App = () => {
       data.current.condition.code === 1000 ? <img src={Sunny} alt="sunny"/> : null : null}
 
       {data.current ? 
-      data.current.condition.text.toLowerCase().includes("Partly cloudy") ? 
+      data.current.condition.text.toLowerCase().includes("partly cloudy") ? 
       <img src={Clouds} alt="clouds"/> : 
       data.current.condition.text.toLowerCase().includes("overcast") || 
       data.current.condition.text.toLowerCase().includes("cloudy") ? <img src={Cloudy} alt="cloudy"/> : null : null}
