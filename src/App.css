@@ -35,7 +35,7 @@ body{
   height: min-content;
   padding: 5px 5px;
   transition: 1s ease;
-  margin:-30px auto;
+  margin:-50px auto;
   float:right;
 }
 
@@ -69,13 +69,13 @@ body{
 }
 
 .btn{
-  margin:5px 5px;
+  margin:5px 0px;
   align-items: center;
+  height:70px;
+  width:90px;
 }
 
 .submit-btn{
-  height:50px;
-  width:110px;
   background-color: rgba(255, 255, 255, 1);
   font-size:20px;
   font-weight: 600;
@@ -84,8 +84,6 @@ body{
 }
 
 .clear-btn{
-  height:50px;
-  width:110px;
   background-color: rgba(255, 255, 255, 1);
   font-size:20px;
   font-weight: 600;
