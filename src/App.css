@@ -50,6 +50,10 @@ body{
   grid-template-columns: repeat(2, 1fr);
 } */
 
+.btn{
+  margin:5px 5px;
+}
+
 .submit-btn{
   height:50px;
   width:110px;
@@ -58,10 +62,6 @@ body{
   font-weight: 600;
   border-radius: 10px;
   transition: 1s ease;
-}
-
-.delete-btn{
-  position:absolute;
 }
 
 .submit-btn:hover{

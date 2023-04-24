@@ -32,13 +32,12 @@ const App = () => {
     console.log(active)
     if (active.indexOf("firstBox") === -1) {
       setActive('firstBox')
-    } else {
-      console.log('hello')
-    }
+    } 
   }
 
-  const handleDelete = () => {
-    setActive(null)
+  const clearHandler = e => {
+    e.preventDefault()
+    setData({})
   }
 
 
@@ -48,20 +47,30 @@ const App = () => {
 
   return (
       <div>
-        <form className='searchbox container'
-        onSubmit={submitHandler}>
+        <form className='searchbox container'>
           <input className='searchbar' 
           type="text" 
           value={city}
           onChange={handleChange}
           placeholder='Enter your city'/>
-          <button className='btn submit-btn'> Submit </button>
+          <button className='btn submit-btn'
+          onClick={submitHandler}> Submit </button>
+          
+          <button
+            className='btn submit-btn'
+            onClick={clearHandler}
+            >
+              Clear
+          </button>    
       </form>
       
         <div className='weatherRows'>
           {active.indexOf("firstBox") === -1 ? 
           null :
-          <WeatherBox className='container' title='box1' data={data}>    
+          <WeatherBox className='container' 
+          title='box1' 
+          data={data}
+          >    
           </WeatherBox>}
         </div>
 

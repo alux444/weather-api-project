@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ERROR from '../img/error.png'
 import Clouds from '../img/clouds.png'
 import Cloudy from '../img/cloudy.png'
@@ -10,16 +10,9 @@ import Mist from '../img/mist.png'
 
 const WeatherBox = ({data}) => {
 
-  
     return (
 
     <div className="weather-rows container">
-
-    <button
-        className='btn submit-btn'
-        onClick={null}>
-        X
-    </button>    
 
 
     <div className="images">
