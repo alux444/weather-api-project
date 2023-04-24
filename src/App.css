@@ -29,14 +29,11 @@ body{
 }
 
 .container-btn {
-  position: relative;
-  display:table-row;
-  width: 250px;
-  height: min-content;
-  padding: 5px 5px;
+  display:flex;
+  margin-left:100px;
+  width:370px;
+  margin-bottom: 10px;
   transition: 1s ease;
-  margin:0px 0;
-  float:right;
 }
 
 .searchbox{
@@ -93,12 +90,12 @@ body{
 
 
 .clear-btn:hover{
-  background-color:rgba(230, 131, 98, 0.781);
+  background-color:rgba(236, 177, 157, 0.781);
   cursor:pointer;
 }
 
 .submit-btn:hover{
-  background-color:rgba(93, 233, 140, 0.781);
+  background-color:rgba(164, 235, 188, 0.781);
   cursor:pointer;
 }
 
