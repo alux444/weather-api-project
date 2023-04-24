@@ -7,7 +7,7 @@ const App = () => {
 
   const [data, setData] = useState({})
   const [city, setCity] = useState('')
-  const [active, setActive] = useState(['firstBox'])
+  const [active, setActive] = useState([])
   
   const options = {
     method: 'GET',
@@ -30,6 +30,15 @@ const App = () => {
     fetchData()
     console.log(data)
     console.log(active)
+    if (active.indexOf("firstBox") === -1) {
+      setActive('firstBox')
+    } else {
+      console.log('hello')
+    }
+  }
+
+  const handleDelete = () => {
+    setActive(null)
   }
 
 
@@ -49,18 +58,11 @@ const App = () => {
           <button className='btn submit-btn'> Submit </button>
       </form>
       
-        <div className='weatherRows container'>
-          {active.indexOf("firstBox") !== -1 ? 
-          <WeatherBox title='box1' data={data}>    
-          {/* <button
-            className='btn submit-btn delete-btn'
-            onSubmit={event => {
-              active.splice(active.indexOf("firstBox"),1)
-            }}>
-            X
-          </button> */}
-          </WeatherBox> : null}
-
+        <div className='weatherRows'>
+          {active.indexOf("firstBox") === -1 ? 
+          null :
+          <WeatherBox className='container' title='box1' data={data}>    
+          </WeatherBox>}
         </div>
 
       </div>

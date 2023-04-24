@@ -13,7 +13,13 @@ const WeatherBox = ({data}) => {
   
     return (
 
-    <div className="weatherBox container">    
+    <div className="weather-rows container">
+
+    <button
+        className='btn submit-btn'
+        onClick={null}>
+        X
+    </button>    
 
 
     <div className="images">

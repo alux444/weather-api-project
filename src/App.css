@@ -20,7 +20,6 @@ body{
   margin: 10px 10px;
   position: flex;
   width: min-content;
-  overflow: hidden;
   height: min-content;
   background: white;
   padding: 10px 10px;
@@ -38,7 +37,7 @@ body{
 }
 
 .searchbar{
-  width:350px;
+  width:300px;
   padding: 10px;
   height:50px;
   font-size:30px;
@@ -46,10 +45,10 @@ body{
 }
 
 
-.weatherRows{
+/* .weatherRows{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-}
+} */
 
 .submit-btn{
   height:50px;
