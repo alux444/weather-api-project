@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/weather-api-project/static/css/main.a37510e4.css",
-    "main.js": "/weather-api-project/static/js/main.07844c0e.js",
+    "main.css": "/weather-api-project/static/css/main.58aab41f.css",
+    "main.js": "/weather-api-project/static/js/main.5ed00ded.js",
     "static/media/cloudy.png": "/weather-api-project/static/media/cloudy.3da7181131f16b6837e4.png",
     "static/media/clouds.png": "/weather-api-project/static/media/clouds.2dffabb3f401f6ba9050.png",
     "static/media/thunderstorm.png": "/weather-api-project/static/media/thunderstorm.6cbce21574879cd2b2cc.png",
@@ -11,11 +11,11 @@
     "static/media/rain.png": "/weather-api-project/static/media/rain.b86b91a23e78207b8dbf.png",
     "static/media/mist.png": "/weather-api-project/static/media/mist.bd332b7a99db11af09ab.png",
     "index.html": "/weather-api-project/index.html",
-    "main.a37510e4.css.map": "/weather-api-project/static/css/main.a37510e4.css.map",
-    "main.07844c0e.js.map": "/weather-api-project/static/js/main.07844c0e.js.map"
+    "main.58aab41f.css.map": "/weather-api-project/static/css/main.58aab41f.css.map",
+    "main.5ed00ded.js.map": "/weather-api-project/static/js/main.5ed00ded.js.map"
   },
   "entrypoints": [
-    "static/css/main.a37510e4.css",
-    "static/js/main.07844c0e.js"
+    "static/css/main.58aab41f.css",
+    "static/js/main.5ed00ded.js"
   ]
 }
