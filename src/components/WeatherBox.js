@@ -12,7 +12,7 @@ const WeatherBox = ({data}) => {
 
     return (
 
-    <div className="weather-rows container">
+    <div className="weather-rows">
 
 
     <div className="images">

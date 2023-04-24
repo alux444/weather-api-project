@@ -5,6 +5,7 @@
   border: 0;
   outline: none;
   box-sizing: border-box;
+  
 }
 
 body{
@@ -18,26 +19,36 @@ body{
 
 .container {
   margin: 10px 10px;
-  position: flex;
+  position: block;
   width: min-content;
   height: min-content;
   background: white;
   padding: 10px 10px;
   border-radius: 20px;
-  transition: height 1s ease-out;
+  transition: 1s ease;
 }
 
+.container-btn {
+  position: relative;
+  display:table-row;
+  width: min-content;
+  height: min-content;
+  padding: 5px 5px;
+  transition: 1s ease;
+  margin:-30px auto;
+  float:right;
+}
 
 .searchbox{
   width: min-content;
   height: min-content;
-  display:flex;
+  display:relative;
   align-items: center;
   justify-content: space-between;
 }
 
 .searchbar{
-  width:300px;
+  width:390px;
   padding: 10px;
   height:50px;
   font-size:30px;
@@ -45,32 +56,56 @@ body{
 }
 
 
-/* .weatherRows{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-} */
+.weather-rows{
+  display: flexbox;
+  margin: auto 10px;
+  position: block;
+  width: min-content;
+  height: min-content;
+  background: white;
+  padding: 10px 10px;
+  border-radius: 20px;
+  transition: 1s ease;
+}
 
 .btn{
   margin:5px 5px;
+  align-items: center;
 }
 
 .submit-btn{
   height:50px;
   width:110px;
-  background-color: rgba(55, 141, 206,0.5);
+  background-color: rgba(255, 255, 255, 1);
   font-size:20px;
   font-weight: 600;
   border-radius: 10px;
   transition: 1s ease;
 }
 
-.submit-btn:hover{
-  background-color:rgba(210, 71, 25, 0.781);
+.clear-btn{
+  height:50px;
+  width:110px;
+  background-color: rgba(255, 255, 255, 1);
+  font-size:20px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: 1s ease;
+}
+
+
+.clear-btn:hover{
+  background-color:rgba(230, 131, 98, 0.781);
   cursor:pointer;
 }
 
-.error-img{
-  display:flex;
+.submit-btn:hover{
+  background-color:rgba(93, 233, 140, 0.781);
+  cursor:pointer;
+}
+
+img{
+  width:370px;
 }
 
 .weather-container{
@@ -79,22 +114,22 @@ body{
 
 @media screen and (max-width: 600px) {
 
-
-  .searchbox{
-    width:300px; 
+  .weather-rows{
+    margin-top: 10px;
+    width:min-content;
+    float:left;
   }
 
-  .searchbar{
-    font-size:20px;
+  .btn{
+    height:50px;
+    width:140px;
+    font-size:24px;
+    margin: 0 8px;
+  }
+  .container-btn{
+    display:flex;
+    width:370px;
+    margin:0;
   }
 
-  .submit-btn{
-    height:40px;
-    width:90px;
-    font-size:16px
-  }
-
-  img{
-    width:80%;
-  }
 }

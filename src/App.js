@@ -38,6 +38,7 @@ const App = () => {
   const clearHandler = e => {
     e.preventDefault()
     setData({})
+    setActive([])
   }
 
 
@@ -47,24 +48,28 @@ const App = () => {
 
   return (
       <div>
-        <form className='searchbox container'>
-          <input className='searchbar' 
+        <form>
+          <input className='searchbar searchbox container' 
           type="text" 
           value={city}
           onChange={handleChange}
           placeholder='Enter your city'/>
+
+          <div className='container-btn'>
+            
           <button className='btn submit-btn'
           onClick={submitHandler}> Submit </button>
           
           <button
-            className='btn submit-btn'
+            className='btn clear-btn'
             onClick={clearHandler}
             >
               Clear
           </button>    
+          </div>
       </form>
       
-        <div className='weatherRows'>
+        <div>
           {active.indexOf("firstBox") === -1 ? 
           null :
           <WeatherBox className='container' 
